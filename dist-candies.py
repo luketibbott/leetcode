@@ -25,11 +25,21 @@ def dist_candies(candies):
     for candy in num_candies.keys():
         num_this_candy = num_candies[candy]
 
-        if num_this_candy%2 == 0:
-            num_sister += num_this_candy
+        if num_this_candy%2 == 1:
+            num_sister += 1
 
     return num_sister
 
-candies = [1, 1, 2, 3]
+def dist_candies2(candies):
+    # Case when there's only one of half the candies
+    max_sister = len(candies)/2
 
-print(dist_candies(candies))
+    return min(max_sister, len(set(candies)))
+    
+
+    
+
+
+candies = [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 10, 11, 12, 13, 14, 15]
+
+print(dist_candies2(candies))
